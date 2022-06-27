@@ -6,7 +6,7 @@ use Illuminate\Console\Scheduling\Schedule;
 use LaravelZero\Framework\Commands\Command;
 use function Termwind\{render};
 
-class InspireCommand extends Command
+class StartCommand extends Command
 {
     /**
      * The signature of the command.
