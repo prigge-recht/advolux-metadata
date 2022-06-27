@@ -17,8 +17,12 @@
     ],
     "require": {
         "php": "^8.0",
+        "ext-xmlwriter": "*",
         "laravel-zero/framework": "^9.0",
-        "nunomaduro/termwind": "^1.3"
+        "nunomaduro/termwind": "^1.3",
+        "smalot/pdfparser": "^2.2",
+        "spatie/pdf-to-text": "^1.51",
+        "spatie/regex": "^3.1"
     },
     "require-dev": {
         "mockery/mockery": "^1.4.4",
