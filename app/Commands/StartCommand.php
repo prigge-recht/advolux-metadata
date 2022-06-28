@@ -112,7 +112,8 @@ class StartCommand extends Command
         $documentDate = Regex::match(config('regex.document-date'), $text)->result();
 
         if ($documentDate) {
-            $documentDate = Carbon::createFromFormat('d.m.Y', $documentDate)->format('Y-m-d');
+            $documentDate = $this->translateMonth($documentDate);
+            $documentDate = Carbon::parse($documentDate)->format('Y-m-d');
         }
 
         // Search for ADX_EingangDatum
@@ -169,6 +170,38 @@ class StartCommand extends Command
 
         $this->info("PDF-Dateien ohne Metadaten: {$this->filesWithoutMetadataCount}");
         Log::info("PDF-Dateien ohne Metadaten: {$this->filesWithoutMetadataCount}");
+    }
+
+    private function translateMonth(string $date) {
+        $de = [
+            'Januar',
+            'Februar',
+            'März',
+            'Mai',
+            'Juni',
+            'Juli',
+            'August',
+            'September',
+            'Oktober',
+            'November',
+            'Dezember'
+        ];
+
+        $en = [
+            'January',
+            'February',
+            'March',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
+
+        return str_replace($de, $en, $date);
     }
 
 }

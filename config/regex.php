@@ -11,6 +11,6 @@ return [
     /**
      * Regex for the document date.
      */
-    'document-date' => env('DOCUMENT_DATE', '/[0-2][0-9]\.[0-3][0-9]\.20[0-5][0-9]/'),
+    'document-date' => env('DOCUMENT_DATE', '/[0-2][0-9]\.(?:\s*(?:Januar|Februar|März|April|Mai|Juni|August|September|Oktober|November|Dezember)\s*|[0-3][0-9]\.)20[0-5][0-9]/'),
 
 ];
