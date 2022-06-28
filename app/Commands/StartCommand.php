@@ -82,11 +82,6 @@ class StartCommand extends Command
                     unset($this->files[$key]);
                 }
             }
-            if (count($this->files) === 0) {
-                return false;
-            }
-
-            return true;
         });
     }
 
@@ -150,6 +145,13 @@ class StartCommand extends Command
             $writer->text($result);
             $writer->endElement(); // Field
         }
+
+        $writer->startElement('Field');
+        $writer->startAttribute('Name');
+        $writer->text('ADX_Dokumenttyp');
+        $writer->endAttribute();
+        $writer->text('Sonstige');
+        $writer->endElement(); // Field
 
         $writer->endElement(); // Fields
         $writer->endElement(); // Document
