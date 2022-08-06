@@ -137,6 +137,13 @@ class StartCommand extends Command
         $writer->endAttribute();
         $writer->startElement('Fields');
 
+        $writer->startElement('Field');
+        $writer->startAttribute('Name');
+        $writer->text('ADX_Betreff');
+        $writer->endAttribute();
+        $writer->text(Str::replaceLast('.pdf', '', $file));
+        $writer->endElement(); // Field
+
         foreach ($results as $key => $result) {
             $writer->startElement('Field');
             $writer->startAttribute('Name');
@@ -150,7 +157,7 @@ class StartCommand extends Command
         $writer->startAttribute('Name');
         $writer->text('ADX_Dokumenttyp');
         $writer->endAttribute();
-        $writer->text('Sonstige');
+        $writer->text('Blanko');
         $writer->endElement(); // Field
 
         $writer->endElement(); // Fields
