@@ -160,6 +160,13 @@ class StartCommand extends Command
         $writer->text('Blanko');
         $writer->endElement(); // Field
 
+        $writer->startElement('Field');
+        $writer->startAttribute('Name');
+        $writer->text('ADX_Absender');
+        $writer->endAttribute();
+        $writer->text('Nicht zugeordnet');
+        $writer->endElement(); // Field
+
         $writer->endElement(); // Fields
         $writer->endElement(); // Document
         $writer->endElement(); // Documents
