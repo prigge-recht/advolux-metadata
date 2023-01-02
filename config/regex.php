@@ -5,9 +5,9 @@ return [
     /**
      * Regex for matching the record number.
      */
-    'record-number' => env('RECORD_NUMBER', '/\d{1,4}\/20[0-5][0-9]\/(?:JP|HL|JL)/'),
+    'record-number' => env('RECORD_NUMBER', '\d{1,4}\/(?:JP|HL|JL)\/20[0-5][0-9]|\d{1,4}\/20[0-5][0-9]\/(?:JP|HL|JL)'),
 
-    'lawyers' => ['JP', 'JL'],
+    'remove-postfix' => ['/JP', '/JL'],
     /**
      * Regex for the document date.
      */

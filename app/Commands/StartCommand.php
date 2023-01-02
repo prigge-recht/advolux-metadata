@@ -99,8 +99,10 @@ class StartCommand extends Command
 
         $finalRecordNumber = current($recordNumbers)->group(0);
 
-        foreach (config('regex.lawyers') as $lawyer) {
-            $finalRecordNumber = Str::replace('/' . $lawyer, '', $finalRecordNumber);
+        foreach (config('regex.remove-postfix') as $remove) {
+            if( Str::endsWith($finalRecordNumber, config('regex.remove-postfix'))) {
+                $finalRecordNumber = Str::replace($remove, '', $finalRecordNumber);
+            }
         }
 
         // Search for ADX_DateiDatum
