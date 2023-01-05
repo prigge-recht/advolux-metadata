@@ -120,6 +120,7 @@ class StartCommand extends Command
             "ADX_Aktenzeichen_eigen" => $finalRecordNumber,
             "ADX_DateiDatum" => $documentDate,
             "ADX_EingangDatum" => $creationDate,
+            "ADX_Betreff" => $file,
         ];
     }
 
