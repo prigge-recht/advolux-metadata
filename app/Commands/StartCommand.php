@@ -167,7 +167,7 @@ class StartCommand extends Command
         $writer->startAttribute('Name');
         $writer->text('ADX_Absender');
         $writer->endAttribute();
-        $writer->text('Nicht zugeordnet');
+        $writer->text('unbekannt');
         $writer->endElement(); // Field
 
         $writer->endElement(); // Fields
